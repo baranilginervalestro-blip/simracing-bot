@@ -202,7 +202,7 @@ module.exports = {
     }
 
     // Select: Game
-    if (interaction.isStringSelectMenu() && interaction.customId === 'rc_game') {
+    if (interaction.isStringSelectMenu?.() && interaction.customId === 'rc_game') {
       if (!session) return interaction.reply({ content: 'Session expired. Run /racecard again.', ephemeral: true });
 
       await interaction.deferUpdate(); // ACK fast
@@ -225,7 +225,7 @@ module.exports = {
     }
 
     // Select: Event (finalize)
-    if (interaction.isStringSelectMenu() && interaction.customId === 'rc_event') {
+    if (interaction.isStringSelectMenu?.() && interaction.customId === 'rc_event') {
       if (!session) {
         return interaction.reply({ content: 'Session expired. Run /racecard again.', ephemeral: true });
       }
@@ -276,7 +276,7 @@ module.exports = {
         dmMessageId: null,
         logMessageId: null
       };
-      if (interaction.isStringSelectMenu() && interaction.customId === 'rc_event') {
+      if (interaction.isStringSelectMenu?.() && interaction.customId === 'rc_event') {
 
         await interaction.deferUpdate();
 
